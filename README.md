@@ -2,6 +2,8 @@
 
 TsenseIRetarget 将 MediaPipe 顺序的 21 个三维手部关键点映射为灵巧手的关节角。本仓库是面向 **TsenseI A3.2** 的源码与标定快照，包含求解器、左右手模型、标定文件和本地网页预览工具。原 TopoRetarget 的导入名称仍作为兼容别名提供。
 
+此快照以原项目提交 `95510dd3235ac68bc15b584d031b326225928f36` 为基础，并包含打包时工作区中的改名改动；本仓库独立初始化，不包含原项目的 Git 历史。
+
 ## 效果演示
 
 [![合成输入的重定向预览](docs/retarget-demo.gif)](docs/retarget-demo.mp4)
