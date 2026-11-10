@@ -1,0 +1,11 @@
+# Local Python environments and caches
+.venvs/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local calibration backups and operating-system files
+*.bak_*
+.DS_Store

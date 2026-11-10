@@ -1,0 +1,50 @@
+schema_version: 1
+model_id: TsenseI_v3_2_withid
+display_name: TsenseI A3.2 with ID
+coordinate_space: urdf_radians
+sides:
+  left:
+    urdf: urdf/TsenseI_hand_left_v3_2_withid.urdf
+    keypoints: robot_keypoints_21.yaml
+    eval_config: eval_config.yaml
+    mjcf: mjcf/mjmodel.xml
+  right:
+    urdf: urdf/TsenseI_hand_right_v3_2_withid.urdf
+    keypoints: robot_keypoints_21_right.yaml
+    eval_config: eval_config_right.yaml
+    mjcf: mjcf/mjmodel_right.xml
+fixed_joints: {}
+hardware:
+  enabled: false
+  adapter: a32_native_sdk
+  supported_sides:
+  - left
+  - right
+retarget:
+  pinch_enabled: true
+  pinch_full_ratio: 0.15
+  pinch_index_full_ratio: 0.15
+  pinch_start_ratio: 0.5
+  pinch_weight: 65.0
+  pinch_index_weight: 65.0
+  lambda_smooth: 0.1
+  lambda_reg: 0.1
+  init_max_iters: 2
+  topo_max_iters: 3
+mirror_axis: y
+right_hand_provisional: true
+collision_scope: different_fingers_only
+notes:
+- Supplied raised5mm/noupper_mid left and right CAD; all 367 visual meshes per hand
+  retained.
+- Right CAD reflects about base Y=4 mm; it is a geometric mirror, not independently
+  measured CAD.
+- Source URDF rotation2 also normalized to [0, 1.74] rad; source and application axes
+  now agree.
+- Source joint frames and URDF mass/inertia retained; application flexion/swing limits
+  retained.
+- Each hand retains its local keypoint annotations; review on replacement geometry
+  is pending.
+- Collision envelopes rebuilt; existing different-finger-only policy and simulation
+  inertias retained.
+mirror_plane_offset_m: 0.004
